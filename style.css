@@ -1,0 +1,1852 @@
+body {
+    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+}
+
+p {
+    font-size: 15px;
+}
+
+/*==============
+PC用のスタイル 
+=============*/
+@media screen and (min-width: 768px) {
+ /* 横幅設定 */
+
+body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto ;
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ナビゲーションのレイアウト */
+
+#nav-pc {
+    text-align: right;
+    font-size: 14px;
+    padding-top: 15px;
+}
+/* ※nav要素（#nav-pc）にtext-align: right;を指定して子要素の各リンクを右寄せにし、フォントサイズを14pxに指定し、padding-topを15pxに指定する */
+
+
+/* ナビゲーションのリンクの装飾設定 */
+#nav-pc > a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+/* リンクの下線を非表示にするために、a要素にtext-decoration: none;を指定し、margin-leftを20pxに指定する */
+
+#nav-pc > a:link {
+    color: #0d0d0d;
+}
+
+#nav-pc > a:visited {
+    color: #0d0d0d;
+}
+
+#nav-pc > a:hover {
+    color: #0d0d0d;
+    text-decoration: underline;
+}
+/* a要素の疑似クラス（a:hover）を使い、リンクを黒色(#0d0d0d)に変更し、リンクがホバー状態（マウスのカーソルが重なった状態）のときのみ下線を表示する */
+
+#nav-pc > a:active {
+    color: #0d0d0d;
+}
+
+/* スマホ用ナビを非表示 */
+#nav-sp,
+#menu-sp {
+    display: none;
+    /* 表示方法（display）：非表示（none） */
+}
+
+/* メインビジュアル */
+#main-visual {
+    position: relative;
+    height: 400px;
+}
+/* メッセージと画像を絶対位置（absolute）で配置するために、親要素であるsection要素（#main-visual）にposition: relative;を指定する
+section要素（#main-visual）の高さを400pxにする */
+
+#main-message {
+    position: absolute;
+    /* 親要素を基準にした絶対位置で配置するために、position: absolute;を指定する */
+    top: 0;
+    left: 0;
+    /* top、leftプロパティにそれぞれ0を指定して、親要素の左上に配置する */
+    background-color: #2710d5;
+    color: #ffffff;
+
+    border-radius: 0 0 476px 0;
+    /* border-radiusプロパティで右下の角を丸める（476px） */
+
+    max-width: 620px;
+    /* 最大幅は620pxにする */
+
+    height: 100%;
+    width: 100%;
+    /* 幅と高さを100%にして、要素のサイズに合わせて広げる */
+
+    z-index: 11;
+    /* z-indexで重なり順を指定し、画像の上に重なるようにする（メインビジュアルの重なり順は10番台を指定） */
+}
+
+
+#main-message > h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 100px 0 0 50px;
+}
+
+#main-message > p {
+    font-size: 28px;
+    margin: 0 0 0 50px;
+}
+/* 見出し（h1）：フォントサイズを60pxにして太字にする
+段落（p）：フォントサイズを28pxにする
+余白（margin）：背景の中央あたりに配置されるように調整する */
+
+#main-visual > img {
+    max-width: 620px;
+    /* 最大幅を620pxにする */
+    border-radius: 476px 0 0 0;
+    /* border-radiusプロパティで左上の角を丸める（476px） */
+    position: absolute;
+    /* 親要素を基準にした絶対位置で配置するために、position: absolute;を指定する */
+    top: 0;
+    right: 0;
+    /* top、rightプロパティにそれぞれ0を指定して、親要素の右上に配置する */
+    z-index: 10;
+    /* メッセージの背景が上に重なる（画像が下になる）ように、z-index: 10;を指定する */
+}
+
+/* 見出し */
+h2 {
+    margin: 40px 0 0 0;
+    /* 余白（margin）：上に40px */
+}
+
+h2::after {
+    content: url("images/line.png");
+    margin-left: 10px;
+    /* 右側の青い線：h2要素の直後に疑似要素（::after）で画像を追加する
+    
+    h2::afterのようなセレクタは疑似要素といい、この場合はh2要素の直後にHTMLには記述していない要素を追加できます。
+
+    今回はcontent: url("画像の相対パス");を指定して、h2要素の直後に画像を追加します。*/
+}
+
+h3 {
+    font-size: 27px;
+}
+
+/* ミッション */
+#mission {
+    margin: 80px auto 80px auto;
+    /* 余白（margin）：上下に80px、左右にautoを指定する（左右にautoを指定することで要素が中央寄せになる） */
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+#mission-flex {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+    display: flex;
+    /* 表示方法（display）：flexを指定して、子要素を横並びにする */
+}
+
+#mission-flex > div {
+    width: 50%;
+    margin: 20px;
+    /* 幅（width）：50%を指定して、2つのdiv要素をちょうど半分に分ける
+余白（margin）：上下左右に20px */
+}
+
+#mission-photo {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+#s2dgs {
+    margin-top: 50px;
+    /* 余白（margin）：上に50px */
+}
+
+
+/* プロダクト */
+#product {
+    background-color: #fafafa;
+    width: 100%;
+    margin: 80px 0 80px 0;
+    padding: 10px 40px 0 40px;
+    /* 背景色（background-color）：薄いグレー（#fafafa）
+余白（margin）：上下に80px
+余白（padding）：上に10px、下に0px、左右に40px */
+}
+
+
+/* 外枠 */
+#product > div {
+    margin-top: 40px;
+    display: flex;
+    /* 余白（margin）：上に40px
+表示方法（display）：子要素を横並びにするため、flexを指定する */
+}
+
+/* 左のカラム */
+#product-left {
+    width: 50%;
+    margin-right: 20px;
+    /* 幅（width）：50%を指定して、2つのdiv要素をちょうど半分に分ける
+余白（margin）：左右のdiv要素の間にそれぞれ20pxの余白を指定する。 */
+}
+
+/* 右のカラム */
+#product-right {
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 80px;
+    /* 右側のdiv要素は上に80pxの余白を指定し、右側のカラムを下にスライドさせる */
+}
+
+/* 画像+説明の枠 */
+#product-left > div {
+    position: relative;
+    height: 480px;
+    margin-right: 20px;
+    /* 配置（position）：子要素である画像やテキストにabsoluteを指定して絶対位置で配置するために、relativeを指定する
+高さ（height）：480px
+余白（margin）：左側のカラムは右に20px、右側のカラムは左に20pxの余白を指定する */
+}
+
+#product-right > div {
+    position: relative;
+    height: 480px;
+    margin-left: 20px;
+}
+
+/* 画像 */
+.product-photo {
+    width: 100%;
+}
+
+/* 説明文の枠 */
+.product-explain {
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 280px;
+    margin: 0 40px 0 40px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+    /* 背景（background-color）：白色（#ffffff）
+配置（position）：position：absolute;を指定して絶対位置で配置する。基準の位置は左上で、leftに0、topに280pxを指定する
+余白（margin）：左右に40px
+余白（padding）：上下左右に20px
+影（box-shadow）：5px 5px 10px rgba(0, 0, 0, 0.05);を指定し、薄い透明色で右下方向に柔らかい影を表示する（基礎編の13章で学習したtext-shadowと同様の使い方） */
+}
+
+/* 説明文の英語 */
+.product-explain > span {
+    color: #2710d5;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    /* 文字色（color）：青色（#2710d5）
+文字の太さ（font-weight）：bold（太字）
+文字のサイズ（font-size）：16px
+余白（margin）：なし（0） */
+}
+
+/* 説明文の見出し */
+.product-explain > h3 {
+    margin: 5px 0 5px 0;
+    /* 余白（margin）：上下に5px */
+}
+
+/* 説明文 */
+.product-explain > p {
+    margin: 0;
+    /* 余白（margin）：なし（0） */
+}
+
+/* 「もっとみる」ボタン */
+#product-more {
+    margin: 0 auto -42px auto;
+    /* 余白（margin）：下に-42pxを指定してあえて外にはみ出させ、左右にはautoを指定して中央寄せにする */
+}
+
+
+/* ABOUT US */
+#aboutus {
+    margin: 80px auto 80px auto;
+    /* 余白（margin）：上下に80px、左右にautoを指定する */
+}
+
+/* 3つの組織文化と画像を入れる枠 */
+#aboutus > div {
+    display: flex;
+    /* 表示方法（display）：子要素を横並びにするため、flexを指定する */
+}
+
+
+/* 画像 */
+.culture-img {
+    width: 100%;
+    align-self: flex-start;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+縦方向の揃え方（align-self）：flex-start（上寄せ） */
+}
+
+.culture-img2 {
+    margin-top: 50px;
+    width: 100%;
+    /* 余白（margin)：上に50px
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+/* 3つの組織文化の表 */
+.culture-table {
+    max-width: 500px;
+    margin-right: 50px;
+    /* 幅の最大値（max-width）：幅が必要以上に広がりすぎないように、最大値を500pxにする
+余白（margin）：右に50pxを指定して、画像との間に余白を作る */
+}
+
+/* 番号 */
+.culture-num {
+    font-size: 80px;
+    color: #2710d5;
+    margin: 0 20px 0 0;
+    /* 文字サイズ（font-size）：80px
+文字色（color）：青色（#2710d5）
+余白（margin）：右に20px
+英語の見出し（.culture-en */
+}
+
+/* 組織文化英語 */
+.culture-en {
+    color: #2710d5;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+    /* 文字色（color）：青色（#2710d5）
+文字の太さ（font-weight）：太字（bold）
+文字サイズ（font-size）：24px
+要素のレイアウト（display）：見出しを縦並びにするため、blockを指定する */
+}
+
+/* 組織文化日本語 */
+.culture-jp {
+    font-size: 28px;
+    font-weight: bold;
+    /* 文字サイズ（font-size）：28px
+文字の太さ（font-weight）：太字（bold） */
+}
+
+/* 説明文 */
+.culture-description {
+    margin: 0;
+    /* 余白（margin）：なし（0） */
+}
+
+
+/* ビジョン */
+#vision {
+    margin: 80px auto 80px auto;
+    /* 余白（margin）：上下に80px、左右にautoを指定する */
+}
+
+/* セクション内の外枠 */
+#vision > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+表示方法（display）：子要素を横並びにするため、flexを指定する
+横方向の揃え方（justify-content）：space-betweenを指定する（一番左と一番右の子要素を両端に配置し、残りの子要素を均等な間隔で配置する）
+折り返し（flex-wrap）：wrapを指定する（幅が足りなくなったら上から下に折り返しする） */
+}
+
+
+/* 7つの行動指針の枠 */
+.vision-box {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative;
+    /* 幅と高さ（width、height）：幅300px、高さ300pxの正方形にする
+余白（margin）：下に30px
+配置（position）：relativeを指定し、現在の位置を基準に相対的な位置に配置する */
+}
+
+.vision-box > img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+高さ（height）：auto
+配置（position）：absolute（絶対位置）を指定し、topとleftに0を指定することで親要素の左上に配置する
+重なり順（z-index）：30を指定し、テキストが上に重なるようにする（z-indexの値が大きいほど上に重なる） */
+}
+
+.vision-box > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 31;
+    margin-right: 20px;
+    /* 配置（position）：absolute（絶対位置）を指定し、topとleftに0を指定することで親要素の左上に配置する
+重なり順（z-index）：31を指定し、画像の上に重なるようにする
+余白（margin）：右に20px */
+}
+
+.vision-box > span > h4 {
+    color:#2710d5;
+    font-size: 19px;
+    margin: 80px 0 0 0;
+    /* 文字色（color）：青色（#2710d5）
+フォントサイズ（font-size）：疑似要素（::first-letter）を使って1文字目だけに40pxを指定する。それ以外は19pxを指定する
+余白（margin）：上に80px */
+}
+
+.vision-box > span > h4::first-letter {
+    font-size: 40px;
+    /* フォントサイズ（font-size）：疑似要素（::first-letter）を使って1文字目だけに40pxを指定する。それ以外は19pxを指定する */
+}
+
+.vision-box > span > h5 {
+    font-size: 20px;
+    margin: 0 0 0 0;
+    /* フォントサイズ（font-size）：20px
+余白（margin）：なし（0） */
+}
+
+.vision-box > span > p {
+    margin: 10px 0 0 0;
+    /* 余白（margin）：上に10px */
+}
+
+
+/* 会社概要 */
+#company {
+    margin: 80px auto 80px auto;
+    /* 余白（margin）：上下に80px、左右にautoを指定する */
+}
+
+/* ここから表 */
+#company-table {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+.tableheader {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 100px;
+    /* 文字の位置（text-align）：left（左揃え）
+余白（padding）：上下左右に20px
+下の枠線
+色（border-bottom-color）：青色（#2710d5）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid）
+幅（width）：100px */
+}
+
+.tableheader-first {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #2710d5;
+    border-top-width: 1px;
+    border-top-style: solid;
+    width: 100px;
+    /* 1行目の見出しだけは上の枠線も表示させるため、上記（.tableheader）の指定だけでなく、以下の指定も追記します。
+
+上の枠線
+色（border-top-color）：青色（#2710d5）
+太さ（border-top-width）：1px
+種類（border-top-style）：実線（solid） */
+}
+
+.cell {
+    padding: 30px;
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    /* 余白（padding）：30px
+下の枠線
+色（border-bottom-color）：グレー（#ececec）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid） */
+}
+
+.cell-first {
+    padding: 30px;
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #ececec;
+    border-top-width: 1px;
+    border-top-style: solid;
+    /* 1行目のセルだけは上の枠線も表示させるため、上記（.cell）の指定だけでなく、以下の指定も追記します。
+
+上の枠線
+色（border-top-color）：グレー（#ececec）
+太さ（border-top-width）：1px
+種類（border-top-style）：実線（solid） */
+}
+
+#company > iframe {
+    width: 100%;
+    height: 368px;
+    margin-top: 40px;
+    /* 幅（width)：100%を指定して、親要素の幅いっぱいに広げる
+高さ（height）：368px
+余白（margin）：上に40px */
+}
+
+/* お問い合わせ */
+#contact {
+    margin: 80px auto 80px auto;
+    /* 余白（margin）：上下に80px、左右にautoを指定する */
+}
+
+/* 外枠 */
+#contact > form > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    /* 表示方法（display）：Flexbox（フレックスボックス）を利用するため、flexを指定する
+並び順 （flex-direction）：子要素を左から右に配置する（row）
+折り返し（flex-wrap）：幅が足りなくなったら上から下に折り返しする（wrap）
+余白（padding）：下に30px */
+}
+
+
+/* 左側の見出し */
+.contact-heading {
+    width: 240px;
+    align-self: center;
+}
+
+/* 見出しのラベル */
+.contact-label {
+    font-weight: bold;
+}
+
+/* 必須 */
+.contact-span {
+    color: #ce2222;
+    margin: 0 0 0 20px;
+    font-weight: bold;
+    /* 文字色（color）：赤色（#ce2222）
+余白（margin）：左に20px
+文字の太さ（font-weight）：太字（bold） */
+}
+
+/* テキストボックス */
+.contact-textbox {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: #707070;
+    border-bottom-style: solid;
+    background-color: #fafafa;
+    width: 400px;
+    height: 56px;
+    /* 上の枠線（border-top）：非表示（0）
+左の枠線（border-left）：非表示（0）
+右の枠線 （border-right）：非表示（0）
+下の枠線
+太さ（border-bottom-width）：1px
+色（border-bottom-color）：グレー（#707070）
+種類（border-bottom-style）：実線（solid）
+背景色（background-color）：薄いグレー（#fafafa）
+幅（width）：400px
+高さ（height）：56px */
+}
+
+
+/* お問い合わせ内容のテキストエリア */
+.contact-textarea {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: #707070;
+    border-bottom-style: solid;
+    background-color: #fafafa;
+    width: 400px;
+    height: 200px;
+    /* 上の枠線（border-top）：非表示（0）
+左の枠線（border-left）：非表示（0）
+右の枠線 （border-right）：非表示（0）
+下の枠線
+太さ（border-bottom-width）：1px
+色（border-bottom-color）：グレー（#707070）
+種類（border-bottom-style）：実線（solid）
+背景色（background-color）：薄いグレー（#fafafa）
+幅（width）：400px
+高さ（height）：200px */
+}
+
+
+/* 個人情報の取り扱い */
+details {
+    width: 700px;
+}
+
+details > div {
+    background-color: #fafafa;
+    padding: 20px;
+}
+details > div > span {
+    font-weight: bold;
+}
+
+/* フッター */
+footer {
+    background-color: #0d0d0d;
+    text-align: center;
+    padding: 80px 80px 30px 80px;
+    /* 背景色（background-color）：黒色（#0d0d0d）
+文字の位置（text-align）：中央揃え（center）
+余白（padding）：上に80px、右に80px、下に30px、左に80px */
+}
+
+#footer-logo {
+    margin-bottom: 30px;
+    /* 余白（margin）：下に30px */
+}
+
+#footer-link {
+    margin-bottom: 50px;
+    /* 余白（margin）：下に50px */
+}
+
+#footer-link > a {
+    text-decoration: none;
+    margin: 10px;
+    /* 文字装飾（text-decoration）：下線を非表示にする（none）
+余白（margin）：上下左右に10px */
+}
+
+#footer-link > a:link {
+    color: #ffffff;
+    /* 未訪問リンク（a:link）の文字色（color）：白色（#ffffff） */
+}
+
+#footer-link > a:visited {
+    color: #ffffff;
+    /* 訪問済みリンク（a:visited）の文字色（color）：白色（#ffffff） */
+}
+
+#footer-link > a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    /* マウスカーソルがリンクに重なったとき（a:hover）
+文字色（color）：白色（#ffffff）
+文字装飾（text-decoration）：下線を表示する（underline） */
+}
+
+#footer-link > a:active {
+    color: #ffffff;
+    /* クリック時（a:active）の文字色（color）：白色（#ffffff） */
+}
+
+
+#sns-footer {
+    text-align: left;
+    width: 100%;
+}
+
+#sns-footer > a {
+    margin-right: 30px;
+}
+
+#copyright {
+    color: #ffffff;
+    float: right;
+}
+
+
+
+/* mission.html用スタイル */
+/* ミッションのメインビジュアル */
+
+#mission-main {
+    height: 496px;
+    width: 100%;
+    background-image: url("images/mission/mission-main.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    
+}
+
+#mission-title {
+    background-color: #2710d5;
+    width: 368px;
+    color: #ffffff;
+    height: 496px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+    /* 背景色（background-color）：青色（#2710d5）
+幅（width）：368px
+文字色（color）：白色（#ffffff）
+高さ（height）：496px
+角丸（border-radius）：右上と右下の角を丸める（248pxずつ）
+配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする */
+}
+
+#mission-title > h1 {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    font-size: 80px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに0、leftに100pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：80px */
+}
+
+#mission-title > span {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-size: 26px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに200px、leftに100pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：26px */
+}
+
+#mission-title > div {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    font-size: 16px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに350px、leftに100pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：16px */
+}
+
+#mission-s2dgs {
+    width: 100%;
+    margin: 20px;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+余白（margin）：20px */
+}
+
+.mission-h2 {
+    color: #2710d5;
+    font-size: 40px;
+    /* 文字色（color）：青色（#2710d5）に設定する
+文字サイズ（font-size）：40px */
+}
+
+.mission-h2::after {
+    content: none;
+    /* content: none;を指定し、追加した青線を削除する */
+}
+
+#mission-5goals {
+    margin: 20px;
+    display: flex;
+    /* 余白（margin）：20px
+表示方法（display）：flexを指定し、要素をFlexbox化する */
+}
+
+#mission-5goals > div {
+    flex-grow: 1;
+    padding: 20px;
+    /* アイテム（子要素）がどれくらい伸びるか（flex-grow）：1を指定し、コンテナ（親要素）の幅いっぱいに引き延ばす
+余白（padding）：20px */
+}
+
+#mission-5goals > div > div {
+    margin-bottom: 40px;
+    /* 余白（margin）：下に40px */
+}
+
+.fivegoals-image-right {
+    float: right;
+    margin: 20px;
+    /* 配置（float）：leftを指定して、左寄せにする
+余白（margin）：20px */
+}
+
+.fivegoals-image-left {
+    float: left;
+    margin: 20px;
+    /* 文字色（color）：青色（#2710d5）
+文字サイズ（font-size）：48px
+余白（margin）：なし（0） */
+}
+
+.fivegoals-number {
+    color: #2710d5;
+    font-size: 48px;
+    margin: 0;
+    /* 文字色（color）：青色（#2710d5）
+文字サイズ（font-size）：48px
+余白（margin）：なし（0） */
+}
+
+.fivegoals-h3 {
+    font-size: 28px;
+    margin: 0;
+    /* 文字サイズ（font-size）：28px
+余白（margin）：なし（0） */
+}
+
+.fivegoals-p {
+    margin: 0;
+}
+/* 余白（margin）：なし（0） */
+
+
+
+/* プロダクトページ */
+#product-main {
+    height: 496px;
+    width: 100%;
+    background-image: url("images/product/product-main.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    /* 高さ（height）：496pxを指定して、右側の画像サイズよりも高くする
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+背景画像（background-image）：product-main.pngを背景画像に指定する
+背景のリピート方法（background-repeat）：繰り返さない（no-repeat）
+背景のy軸の位置（background-position-y）：centerを指定し、縦方向の中央に配置する */
+}
+
+#product-title {
+    background-color: #2710d5;
+    width: 368px;
+    color: #ffffff;
+    height: 496px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+    /* 背景色（background-color）：青色（#2710d5）
+幅（width）：368px
+文字色（color）：白色（#ffffff）
+高さ（height）：496px
+角丸（border-radius）：右上と右下の角を丸める（248pxずつ）
+配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする */
+}
+
+#product-title > h1 {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    font-size: 80px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに0、leftに100pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：80px */
+}
+
+#product-title > span {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-size: 26px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに200px、leftに100pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：26px */
+}
+
+#product-title > div {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    font-size: 16px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに350px、leftに100pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：16px */
+}
+
+/* セクション1 */
+.product-section1 {
+    position: relative;
+    margin: 20px;
+    height: 340px;
+}
+
+.product-section1 > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    margin: 0 40px 30px 0;
+    border-radius: 0 432px 0 0;
+}
+
+.product-section1 > div {
+    position: absolute;
+    top: 0;
+    left: 480px;
+}
+
+/* セクション2 */
+.product-section2 {
+    position: relative;
+    margin: 20px;
+    height: 340px;
+}
+
+.product-section2 > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    margin: 0 0 30px 40px;
+    border-radius: 432px 0 0 0;
+}
+
+.product-section2 > div {
+    width: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product-h2 {
+    color: #2710d5;
+    font-size: 24px;
+    margin: 0;
+}
+
+.product-h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+
+/* これはこのまま */
+}
+
+/* ==================
+スマートフォン用のスタイル
+================== */
+@media screen and (max-width: 767px) {
+
+    /* ページ全体（body要素） */
+    body {
+        min-width: 375px;
+        margin: 0;
+        /* 最小幅（min-width）：375px
+余白（margin）：なし（0） */
+    }
+
+    /* PC用ナビゲーション非表示 */
+    #nav-pc {
+        display: none;
+    }
+    /* 表示方法（display）：非表示（none） */
+
+    /* ハンバーガーメニュー */
+    #menu-sp {
+        float: right;
+        padding: 0;
+    }
+    /* 要素の並び（float）：rightを指定し、ヘッダーの中で右寄せにする
+余白（padding）：なし（0） */
+
+
+/* スマホ用ナビゲーションの表示切替 */
+/* 初期状態、レイアウトと非表示設定 */
+#nav-sp {
+    background-color: #2710d5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 100;
+    /* 背景色（background-color）： 青色（#2710d5）
+配置（position）：絶対位置（absolute）を指定し、topとleftに0を指定することで親要素の左上に配置する
+幅と高さ（width、height）：両者ともに100%を指定し、画面いっぱいに広げる
+表示方法（display）：非表示（none）
+重なり順（z-index）：100を指定し、どの要素よりも上に重ねる */
+}
+
+
+/* ×ボタン */
+#close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 配置（position）：絶対位置（absolute）を指定し、親要素（#nav_sp）の右上の角を基準位置として、上側（top）と右側（right）にそれぞれ20pxに設定する。（右上の角から内側へ20pxの位置に配置する） */
+}
+
+
+/* ナビゲーションメニュー用ロゴ */
+#logo-sp {
+    margin: 80px 0 30px 20px;
+    /* 余白（margin）：上に80px、右に0、下に30px、左に20px */
+}
+
+
+/* ナビゲーションのリンクの装飾設定 */
+#nav-sp > a {
+    display: block;
+}
+
+#nav-sp > a:link {
+    color: #ffffff;
+}
+
+#nav-sp > a:visited {
+    color: #ffffff;
+}
+
+#nav-sp > a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#nav-sp > a:active {
+    color: #ffffff;
+} 
+#nav-sp > .menu {
+    text-decoration: none;
+    display: block;
+    margin: 0 20px 0 20px;
+    height: 44px;
+    font-size: 16px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+
+    /* 文字装飾（text-decoration）：なし（none）
+表示方法（display）：blockを指定し、縦並びにする
+余白（margin）：上に0、右に20px、下に0、左に20px
+高さ（height）：44px
+文字のサイズ（font-size）：16px
+背景画像（background-image）：url("images/arrow.png")を指定し、arrow.pngをリンクの背景として表示する
+背景のリピート方法（background-repeat）：繰り返さない（no-repeat）
+背景の位置（background-position）：right topを指定し、右上に配置する */
+}
+
+#sns {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    /* 配置（position）：絶対位置（absolute）を指定し、bottomとleftに20pxを指定することで親要素の左下を基準に配置する */
+}
+
+#sns > a {
+    margin-right: 30px;
+    /* 余白（margin）：右に30px */
+}
+
+
+
+/* メインビジュアル */
+#main-visual {
+    position: relative;
+    height: 470px;
+    width: 100%;
+    overflow: hidden;
+    /* 配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする
+高さ（height）：470px
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+#main-visual > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2710d5;
+    color: white;
+    border-radius: 0 0 476px 0;
+    text-align: center;
+    height: 280px;
+    width: 100%;
+    z-index: 11;
+    /* 配置（position）：絶対位置（absolute）を指定し、topとleftに0を指定することで親要素の左上に配置する
+背景色（background-color）：青色（#2710d5）
+文字色（color）：白色（white）
+角丸（border-radius）：右下の角を丸くする（476px）
+文字の位置（text-align）：中央揃え（center）
+高さ（height）：280px
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+重なり順（z-index）：11を指定して、画像の上に重なるようにする */
+}
+
+#main-visual > div > h1 {
+    font-size: 28px;
+    margin: 90px 0 0 0;
+    /* 文字サイズ（font-size）：28px
+余白（margin）：上に90px */
+}
+
+#main-visual > div > p {
+    margin: 0;
+    /* 余白（margin）：なし（0） */
+}
+
+#main-visual > img {
+    width: 100%;
+    border-radius: 476px 0 0 0;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+角丸（border-radius）：左上の角を丸くする（476px）
+重なり順（z-index）：10を指定して、メッセージが上に重なるようにする
+配置（position）：絶対位置（absolute）を指定し、bottomとrightに0を指定することで親要素の右下に配置する */
+}
+
+/* 見出し */
+h2::after {
+    content: url("images/line.png");
+    margin-left: 10px;
+    /* 追加する内容（content）：url("images/line.png")を指定して、青線の画像を追加する
+    余白（margin）：左に10px
+     */
+}
+
+h3 {
+    font-size: 24px;
+    margin: 10px 0 0 0;
+    /* 文字サイズ（font-size）：24px
+余白（margin）：上に10px */
+}
+
+/* ミッション */
+#mission {
+    margin: 20px;
+    /* 余白（margin）：上下左右に20px */
+}
+
+#mission-photo {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+#s2dgs {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+
+/* プロダクト */
+#product {
+    background-color: #fafafa;
+    padding: 10px;
+    /* 背景色（background-color）：薄いグレー（#fafafa）
+余白（padding）：上に10px */
+}
+
+#product h2 {
+    margin-left: 20px;
+    /* 余白（margin）：左に20px */
+}
+
+/* 外枠 */
+/* 左右のカラム　スマホでは縦並び */
+#product-left,
+#product-right {
+    margin-right: 20px;
+    margin-left: 20px;
+    /* 余白（margin）：左右に20px */
+}
+
+/* 画像+説明の枠 */
+#product-left > div,
+#product-right > div {
+    position: relative;
+    height: 540px;
+    /* 配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする
+高さ（height）：540px */
+}
+
+/* 説明文の枠 */
+.product-explain {
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+    /* 背景色（background-color）：白色（#ffffff）
+配置（position）：絶対位置（absolute）を指定し、leftに0、bottomに50pxを指定することで親要素の左下を基準に配置する
+余白（padding）：上下左右に20px
+影（box-shadow）：5px 5px 10px rgba(0, 0, 0, 0.05)を指定して、柔らかい影をつける */
+}
+
+.product-explain > span {
+    color: #2710d5;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    /* 文字色（color）：青色（#2710d5）
+フォントの太さ（font-weight）：太字（bold）
+文字サイズ（font-size）：16px
+余白（margin）：なし（0） */
+}
+
+.product-explain > h3 {
+    margin: 10px 0 10px 0;
+    /* 余白（margin）：上下に10px */
+}
+
+
+/* 画像 */
+.product-photo {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+#product-more > img {
+    margin: 0 0 -42px 20px;
+    /* 余白（margin）：下に-42px、左に20px */
+}
+
+/* ABOUT US */
+#aboutus {
+    margin: 80px 20px 80px 20px;
+    /* 余白（margin）：上下に80px、左右に20px */
+}
+
+#aboutus > div {
+    display: flex;
+    flex-direction: column;
+    /* 表示方法（display）：flexを指定し、Flexbox専用のプロパティを指定できるようにする
+アイテム（子要素）の並び順（flex-direction）：columnを指定し、画像と表を上から下に配置する */
+}
+
+.culture-table {
+    width: 100%;
+    padding-right: 20px;
+    order: 2;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+余白（padding）：右に20px
+並び順（order）：2を指定し、画像の後に配置する */
+}
+
+.culture-img {
+    width: 100%;
+    order: 1;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+並び順（order）：1を指定し、表の前に配置する */
+}
+
+.culture-img2 {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+
+.culture-num {
+    font-size: 80px;
+    color: #2710d5;
+    /* 文字サイズ（font-size）：80px
+文字色（color）：青色（#2710d5） */
+}
+
+.culture-en {
+    color: #2710d5;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+    /* 文字色（color）：青色（#2710d5）
+文字の太さ（font-weight）：太字（bold）
+文字サイズ（font-size）：24px
+表示方法（display）：blockを指定し、縦並びにする */
+}
+
+.culture-jp {
+    display: block;
+    /* 表示方法（display）：blockを指定し、縦並びにする */
+}
+
+.culture-description {
+    margin: 0;
+    /* 余白（margin）：なし（0） */
+}
+
+
+/* ビジョン */
+#vision {
+    margin: 80px 20px 80px 20px;
+    /* 余白（margin）：上下に80px、左右に20px */
+}
+
+.vision-box {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative;
+    /* 幅と高さ（width、height）：両者ともに300pxを指定し、正方形にする
+余白（margin）：下に30px
+配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする */
+}
+
+.vision-box > img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+高さ（height）：自動調整（auto）
+配置（position）：絶対位置（absolute）を指定し、topとleftに0を指定することで親要素の左上に配置する
+重なり順（z-index）：30を指定し、テキストが上に重なるようにする */
+} 
+
+.vision-box > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 31;
+    margin-right: 20px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topとleftに0を指定することで親要素の左上に配置する
+重なり順（z-index）：31を指定し、画像の上に重なるようにする
+余白（margin）：右に20px */
+}
+
+.vision-box > span > h4 {
+    color: #2710d5;
+    font-size: 19px;
+    margin: 60px 0 0 0;
+    /* 文字色（color）：青色（#2710d5）
+文字サイズ（font-size）：19px
+余白（margin）：上に60px
+日本語の見出し（.vision-bo */
+} 
+
+.vision-box > span > h5 {
+    font-size: 20px;
+    margin: 0 0 0 0;
+    /* 文字サイズ（font-size）：20px
+余白（margin）：なし（0） */
+}
+
+.vision-box > span > p {
+    margin: 10px 0 0 0;
+    /* 文字サイズ（font-size）：20px
+余白（margin）：なし（0） */
+}
+
+
+
+/* 会社概要 */
+#company {
+    margin: 0 20px 0 20px;
+    /* 余白（margin）：左右に20px */
+}
+
+#company > h3 {
+    margin-bottom: 20px;
+    /* 余白（margin）：下に20px */
+}
+
+
+#company > table {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+.tableheader-first {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #2710d5;
+    border-top-width: 1px;
+    border-top-style: solid;
+    width: 50px;
+    /* 文字の位置（text-align）：左揃え（left）
+余白（padding）：20px
+下の枠線
+色（border-bottom-color）：青色（#2710d5）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid）
+上の枠線
+色（border-top-color）：青色（#2710d5）
+太さ（border-top-width）：1px
+種類（border-top-style）：実線（solid）
+幅（width）：50px */
+}
+
+.tableheader {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 50px;
+    /* 文字の位置（text-align）：左揃え（left）
+余白（padding）：20px
+下の枠線
+色（border-bottom-color）：青色（#2710d5）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid）
+幅（width）：50px */
+}
+
+.cell {
+    padding: 20px;
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    /* 余白（padding）：20px
+下の枠線
+色（border-bottom-color）：薄いグレー（#ececec）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid） */
+}
+
+.cell-first {
+    padding: 20px;
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #ececec;
+    border-top-width: 1px;
+    border-top-style: solid;
+    /* 余白（padding）：20px
+下の枠線
+色（border-bottom-color）：薄いグレー（#ececec）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid） */
+}
+
+#company > iframe {
+    width: 100%;
+    height: 240px;
+    margin: 40px 0 0 0;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+高さ（height）：240px
+余白（margin）：上に40px */
+}
+
+
+/* お問い合わせ */
+#contact {
+    margin: 80px 20px 80px 20px;
+    /* 余白（margin）：上下に80px、左右に20px */
+}
+
+#contact > h3 {
+    margin-bottom: 20px;
+    /* 余白（margin）：下に20px */
+}
+
+#contact > form > div {
+    margin-bottom: 20px;
+    /* 余白（margin）：下に20px */
+}
+
+.contact-heading {
+    margin-bottom: 20px;
+    /* 余白（margin）：下に20px */
+}
+
+
+/* ラベル */
+.contact-label {
+    font-weight: bold;
+    /* 文字の太さ（font-weight）：太字（bold） */
+}
+
+/* 必須 */
+.contact-span {
+    color: #ce2222;
+    margin: 0 0 0 20px;
+    font-weight: bold;
+    /* 文字色（color）：赤色（#ce2222）
+余白（margin）：左に20px
+文字の太さ（font-weight）：太字（bold） */
+}
+
+.contact-textbox {
+    height: 56px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: #fafafa;
+    border-bottom-color: #707070;
+    border-bottom-width: 1px;
+    border-style: solid;
+    min-width: 300px;
+    width: 100%;
+    /* 高さ（height）：56px
+上の枠線（border-top）：非表示（0）
+左の枠線（border-left）：非表示（0）
+右の枠線 （border-right）：非表示（0）
+背景色（background-color）：薄いグレー（#fafafa）
+下の枠線
+色（border-bottom-color）：グレー（#707070）
+太さ（border-bottom-width）：1px
+種類（border-bottom-style）：実線（solid）
+最小幅（min-width）：300px
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+.contact-textarea {
+    height: 150px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: #fafafa;
+    width: 100%;
+    /* 高さ（height）：150px
+上の枠線（border-top）：非表示（0）
+左の枠線（border-left）：非表示（0）
+右の枠線 （border-right）：非表示（0）
+背景色（background-color）：薄いグレー（#fafafa）
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+.radiobutton {
+    margin-bottom: 20px;
+    /* 余白（margin）：下に20px */
+}
+
+.radiobutton + label::after {
+    content: "\A";
+    white-space: pre;
+    /* HTMLではbrタグを使って改行していましたが、実はCSSでも改行できます。CSSで改行するには、content: "\A";とwhite-space: pre;を同時に指定します。 */
+}
+
+/* フッター */
+footer {
+    background-color: #0d0d0d;
+    padding: 30px 20px 50px 20px;
+    /* 背景色（background-color） ：黒色（#0d0d0d）
+余白（padding）：上に30px、右に20px、下に50px、左に20px */
+}
+
+#footer-logo {
+    margin-bottom: 30px;
+    /* 余白（margin）:下に30px */
+}
+
+
+#footer-link {
+    margin-bottom: 50px;
+    /* 余白（margin）：下に50px */
+}
+
+#footer-link > a {
+    text-decoration: none;
+    margin: 0 20px 30px 0;
+    display: block;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    /* 文字装飾（text-decoration）：noneを指定し、下線を非表示にする
+余白（margin）：右に20px、下に30px
+表示方法（display）：blockを指定して、要素を縦並びにする
+背景画像（background-image）：url("images/arrow.png")を指定し、arrow.pngをリンクの背景として表示する
+背景のリピート方法（background-repeat）：繰り返さない（no-repeat）
+背景の位置（background-position）：right topを指定し、右上に配置する */
+}
+
+#footer-link > a:link {
+    color: #ffffff;
+}
+
+#footer-link > a:visited {
+    color: #ffffff;
+}
+
+#footer-link > a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#footer-link > a:active {
+    color: #ffffff;
+    /* 未訪問リンク（a:link）の文字色（color）：白色（#ffffff）
+訪問済みリンク（a:visited）の文字色（color）：白色（#ffffff）
+ホバー時
+文字色（color）：白色（#ffffff）
+文字装飾（text-decoration）：下線を表示する（underline）
+タップ時（a:active）の文字色（color）：白色（#ffffff） */
+}
+
+#sns-footer > a {
+    margin-right: 30px;
+    /* 余白（margin）：右に30px */
+}
+
+#copyright {
+    font-size: 12px;
+    display: block;
+    margin-top: 30px;
+    color: #ffffff;
+    /* 文字サイズ（font-size）：12px
+表示方法（display）：blockを指定して、要素を縦並びにする
+余白（margin）：上に30px
+文字色（color）：白色（#ffffff） */
+}
+
+/* mission.html用スタイル */
+/* ミッションのメインビジュアル */
+#mission-main {
+    height: 256px;
+    width: 100%;
+    background-image: url("images/mission/mission-main.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: auto 208px;
+    /* 高さ（height）：256px
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+背景画像（background-image）：mission-main.pngを背景画像に指定する
+背景のリピート方法（background-repeat）：繰り返さない（no-repeat）
+背景のy軸の位置（background-position-y）：centerを指定し、縦方向の中央に配置する
+背景のサイズ（background-size）：幅にauto、高さに208pxを指定する */
+
+/* background-sizeプロパティ
+background-sizeは、背景画像の幅と高さを指定するプロパティです。画像サイズと異なる値を指定すると、見切れたり余白ができたりします。
+
+今回はあえて要素の高さよりも小さい値を指定して、画像の上下に余白ができるようにします。 */
+}
+
+#mission-title {
+    background-color: #2710d5;
+    width: 136px;
+    color: #ffffff;
+    height: 256px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+    /* 背景色（background-color）：青色（#2710d5）
+幅（width）：136px
+文字色（color）：白色（#ffffff）
+高さ（height）：256px
+角丸（border-radius）：右上と右下の角を丸める（248pxずつ）
+配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする */
+}
+#mission-title > h1 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 40px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに0、leftに20pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：40px */
+}
+
+#mission-title > span {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    font-size: 18px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに110px、leftに20pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：18px */
+}
+
+#mission-title > div {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    font-size: 13px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに180px、leftに20pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：13px */
+}
+
+
+/* ミッションページ　S2DGSの設定 */
+#mission-s2dgs {
+    margin: 20px;
+    /* 余白（margin）：20px */
+}
+
+.mission-h2 {
+    color: #2710d5;
+    font-size: 38px;
+    margin: 0px;
+    /* 文字色（color）：青色（#2710d5）
+文字サイズ（font-size）：38px */
+}
+
+.mission-h2::after {
+    content: none;
+    /* content: none;を指定し、追加した青線を削除する */
+}
+
+#mission-s2dgs > img {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+
+/* ミッションページ　5Goalsの設定 */
+#mission-5goals {
+    margin: 20px;
+    /* 余白（margin）：上下左右に20px */
+}
+
+#mission-5goals > div > div {
+    margin-bottom: 40px;
+    /* 余白（margin）：下に40px */
+}
+
+#s2dgs-image {
+    width: 100%;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる */
+}
+.fivegoals-image-right {
+    margin: 20px auto 20px auto;
+    display: block;
+    /* 余白（margin）：上下に20px、左右にautoに設定して中央揃えにする
+表示方法（display）：blockを指定して、要素を縦並びにする */
+}
+
+.fivegoals-image-left {
+    margin: 20px auto 20px auto;
+    display: block;
+    /* 余白（margin）：上下に20px、左右にautoに設定して中央揃えにする
+表示方法（display）：blockを指定して、要素を縦並びにする */
+}
+
+.fivegoals-number {
+    color: #2710d5;
+    font-size: 48px;
+    margin: 0;
+    /* 文字色（color）：青色（#2710d5）
+文字サイズ（font-size）：48px
+余白（margin）：なし（0） */
+}
+
+.fivegoals-h3 {
+    font-size: 28px;
+    margin: 0;
+    /* 文字サイズ（font-size）：28px
+余白（margin）：なし（0） */
+}
+
+.fivegoals-p {
+    margin: 0;
+    /* 余白（margin）：なし（0） */
+}
+
+/* プロダクトページ */
+#product-main {
+    height: 256px;
+    width: 100%;
+    background-image: url("images/product/product-main.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: auto 208px;
+    /* 高さ（height）：256px
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+背景画像（background-image）：product-main.pngを背景画像に指定する
+背景のリピート方法（background-repeat）：繰り返さない（no-repeat）
+背景のy軸の位置（background-position-y）：centerを指定し、縦方向の中央に配置する
+背景のサイズ（background-size）：幅にauto、高さに208pxを指定する */
+}
+
+#product-title {
+    background-color: #2710d5;
+    width: 136px;
+    color: #ffffff;
+    height: 256px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+    /* 背景色（background-color）：青色（#2710d5）
+幅（width）：136px
+文字色（color）：白色（#ffffff）
+高さ（height）：256px
+角丸（border-radius）：右上と右下の角を丸める（248pxずつ）
+配置（position）：relativeを指定し、子要素を絶対位置で配置できるようにする */
+}
+
+#product-title > h1 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 40px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに0、leftに20pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：40px */
+}
+
+#product-title > span {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    font-size: 18px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに110px、leftに20pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：18px */
+}
+
+#product-title > div {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    font-size: 13px;
+    /* 配置（position）：絶対位置（absolute）を指定し、topに180px、leftに20pxを指定することで親要素の左上を基準に配置する
+文字サイズ（font-size）：13px */
+}
+
+.product-section1 {
+    margin: 20px;
+    /* 余白（margin）：20px */
+}
+
+.product-section1 > img {
+    width: 100%;
+    border-radius: 0 300px 0 0;
+    /* 幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+角丸（border-radius）：右上の角を丸める（300px） */
+}
+
+.product-section2 {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    /* 余白（margin）：20px
+表示方法（display）：flexを指定し、要素をFlexbox化する
+アイテム（子要素）の並び順（flex-direction）：columnを指定し、画像とテキストを上から下に配置する */
+}
+
+.product-section2 > img {
+    order: 1;
+    width: 100%;
+    border-radius: 300px 0 0 0;
+    /* 並び順（order）：1を指定し、テキストの前に配置する
+幅（width）：100%を指定して、親要素の幅いっぱいに広げる
+角丸（border-radius）：左上の角を丸める（300px） */
+}
+
+.product-section2 > div {
+    order: 2;
+    /* 並び順（order）：2を指定し、画像の後に配置する */
+}
+
+.product-h2 {
+    color: #2710d5;
+    font-size: 24px;
+    margin: 0;
+    /* 文字色（color）：青色（#2710d5）
+文字サイズ（font-size）：24px
+余白（margin）：なし（0） */
+}
+
+.product-h3 {
+    font-size: 28px;
+    margin: 0;
+    /* 文字サイズ（font-size）：28px
+余白（margin）：なし（0） */
+}
+
+
+
+/* これはこのまま */
+}
